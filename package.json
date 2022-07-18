@@ -1,0 +1,42 @@
+{
+    "name": "spectrocloud-cluster-provider",
+    "displayName": "spectrocloud-cluster-provider",
+    "description": "Adds SpectroCloud support to the Kubernetes extension",
+    "version": "0.0.1",
+    "publisher": "spectrocloud",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.vsKubernetesConfigureFromCluster",
+        "onCommand:extension.vsKubernetesCreateCluster",
+        "onView:kubernetes.cloudExplorer"
+    ],
+    "main": "./out/extension",
+    "contributes": {},
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "extensionDependencies": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools"
+    ],
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^8.10.25",
+        "@types/shelljs": "^0.8.3",
+        "tslint": "^5.8.0",
+        "typescript": "^4.7.4",
+        "vscode": "^1.1.37"
+    },
+    "dependencies": {
+        "shelljs": "^0.8.3",
+        "vscode-kubernetes-tools-api": "^1.0.0"
+    }
+}
